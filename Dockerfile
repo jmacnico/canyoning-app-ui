@@ -13,12 +13,9 @@ COPY . /app/
 RUN yarn build
 
 
-FROM nginx:1.21.6-alpine AS production
-
+FROM nginx:alpine
 COPY --from=development /app/build /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
 COPY /nginx/cors-settings.conf nginx/http-security-headers.conf /etc/nginx/
 COPY /nginx/nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE $PORT
 
-CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
