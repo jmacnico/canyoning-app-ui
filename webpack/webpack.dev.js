@@ -5,7 +5,7 @@ module.exports = {
 	devServer:{
 		hot:true,
 		open:true,
-		port: '3000',
+		port: ENV.PORT || '3000',
 		static: path.join(__dirname, 'build'),
 		watchFiles: ['src/**/*'],
 	}

@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  teste-app:
+    build: 
+      context: ./
+      target: development
+      dockerfile: Dockerfile
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true # para novas versões do react deve se usar esta variável para atualizar automaticamente a página
+      - CI=true
+    ports: 
+      - 3000:3000
+    volumes:
+      - .:/app
+    image: typescript-teste
+    container_name: typescript-teste-container
