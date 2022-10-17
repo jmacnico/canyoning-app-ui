@@ -20,4 +20,5 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY /nginx/cors-settings.conf nginx/http-security-headers.conf /etc/nginx/
 COPY /nginx/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE $PORT
-ENTRYPOINT ["nginx","-g","daemon off;"]
+
+CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
