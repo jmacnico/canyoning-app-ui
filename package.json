@@ -4,6 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+	"__herokuStart_steps":"------------------------------------------------",
+
+	"__herokuInformation":"https://dashboard.heroku.com/apps/zvpnry-teste-docker/deploy/heroku-container",
+	"gitInit": "git init",
+	"git_heroku_remote": "npx heroku git:remote -a $app_name",
+	"gitOtherSteps": "git add . && git commit -m \"First commit\"",
+	"heroku_login" : "npx heroku login",
+	"heroku_docker_login": "npx heroku container:login",
+	"heroku_docker_build": "npx heroku container:push web",
+	"heroku_docker_create_container": "npx heroku container:release web",
+	
+	"__herokuEnd_steps":"------------------------------------------------",
+
+
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "build-dev": "webpack --config webpack/webpack.config.js --env env=devbuild",
