@@ -16,4 +16,8 @@ describe('RemoteAuthentication unit tests', () => {
     await sut.Auth()
     expect(httpPostClientSpy.url).toBe(url)
   })
+
+  it('', () => {
+    expect(1).toBe(1)
+  })
 })
