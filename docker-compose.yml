@@ -12,6 +12,6 @@ services:
     ports: 
       - 3000:3000
     volumes:
-      - .:/app
+      - ./src:/app/src
     image: typescript-teste
     container_name: typescript-teste-container

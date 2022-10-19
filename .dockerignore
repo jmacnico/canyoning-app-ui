@@ -1,0 +1,9 @@
+node_modules
+Dockerfile
+.dockerignore
+.env
+.husky
+yarn-error.log
+README.md
+.eslintrc
+.eslintignore
