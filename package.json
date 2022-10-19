@@ -18,7 +18,11 @@
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "build-dev": "webpack --config webpack/webpack.config.js --env env=devbuild",
     "tsc-build": "tsc",
-	"test" : "jest"
+	"test" : "jest --passWithNoTests",
+	"test:watch" : "npm test -- --watch",
+	"test:staged" : "npm test -- --findRelatedTests",
+	"test:ci" : "npm test -- --coverage"
+
   },
   "keywords": [],
   "author": "",
