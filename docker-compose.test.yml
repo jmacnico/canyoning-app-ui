@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+   f-test-unit:
+    container_name: "f-test-unit"
+    build:
+      context: "."
+      dockerfile: "dev.dockerfile"
+      target: "unit-test"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true # para novas versões do react deve se usar esta variável para atualizar automaticamente a página
+      - CI=true
+    volumes:
+      - "./src:/app/src"
+      - "./.git:/app/.git"
+    tty: true
+    stdin_open: false

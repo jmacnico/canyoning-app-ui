@@ -19,11 +19,16 @@
     "build-dev": "webpack --config webpack/webpack.config.js --env env=devbuild",
     "tsc-build": "tsc",
     "test": "jest --passWithNoTests --colors",
-    "docker:test": "yarn test --runInBand --detectOpenHandles",
     "test:watch": "yarn test --watch",
     "test:staged": "yarn test --findRelatedTests",
     "test:ci": "yarn test -- --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+	
+	"__docker-start": "----------------------------------",
+    "docker:test": "yarn test --runInBand --detectOpenHandles",
+	"dcu:test": "docker-compose -f docker-compose.test.yml up",
+	"__docker-end": "----------------------------------"
+
   },
   "keywords": [],
   "author": "",
