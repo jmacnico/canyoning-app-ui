@@ -6,8 +6,7 @@ module.exports = {
   mode: 'development',
   entry: path.resolve(__dirname, '..', './src/main/index.tsx'),
   output: {
-    path: path.resolve(__dirname, '..', './public/js'),
-    publicPath: '/public/js',
+    path: path.resolve(__dirname, '..', './build/js'),
     filename: 'bundle.js'
   },
   resolve: {
@@ -16,7 +15,7 @@ module.exports = {
       '@': path.join(__dirname, '..', 'src')
     }
   },
-  external: {
+  externals: {
     react: 'React',
     'react-dom': 'ReactDOM'
   },
