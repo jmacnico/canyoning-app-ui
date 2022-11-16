@@ -58,10 +58,10 @@ describe('Login unit tests', () => {
   it('Should call Validation with correct password', () => {
     const { sut, validationSpy } = makeSut()
     const { getByTestId } = sut
-    const emailInput = getByTestId('email')
-    fireEvent.input(emailInput, { target: { value: 'any_email' } })
+    const passwordInput = getByTestId('password')
+    fireEvent.input(passwordInput, { target: { value: 'any_password' } })
     expect(validationSpy.input).toEqual({
-      email: 'any_email'
+      password: 'any_password'
     })
   })
 })
