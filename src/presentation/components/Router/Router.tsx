@@ -8,7 +8,7 @@ const Router: React.FC = () => {
     <StylesContainer>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login validation={{ Validate: (input: object): string => { return '' } }} />} />
         </Routes >
       </BrowserRouter>
     </StylesContainer>

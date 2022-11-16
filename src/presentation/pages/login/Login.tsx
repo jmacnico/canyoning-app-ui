@@ -1,25 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import LoginContainerStyled from './Login.styled'
 import { TextField, Button, LoginHeader, Footer, FormStatus } from '../../components'
 import Context from '@/presentation/contexts/form/FormContext'
+import { IValidation } from '@/presentation/protocols/IValidation'
 
-const Login: React.FC = () => {
-  const [state] = useState({
-    isLoading: false
+type Props = {
+  validation: IValidation
+}
+
+const Login: React.FC<Props> = ({ validation }: Props) => {
+  const [state, setState] = useState({
+    isLoading: false,
+    email: '',
+    mainError: '',
+    emailError: 'Campo obrigatório',
+    passwordError: 'Campo obrigatório'
 
   })
 
-  const [errorState] = useState({
-    main: '',
-    email: 'Campo obrigatório',
-    password: 'Campo obrigatório'
-
-  })
+  useEffect(() => {
+    validation.Validate({ email: state.email })
+  }, [state.email])
 
   return (
     <LoginContainerStyled>
       <LoginHeader />
-      <Context.Provider value={{ state, errorState }}>
+      <Context.Provider value={{ state, setState }}>
         <form className='form'>
           <h2>Login</h2>
           <TextField type="email" name="email" placeholder='Digite seu e-mail' />

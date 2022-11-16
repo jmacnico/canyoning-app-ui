@@ -5,8 +5,16 @@ import Context from '@/presentation/contexts/form/FormContext'
 type Props = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
 const TextField: React.FC<Props> = (props: Props) => {
-  const { errorState } = useContext(Context)
-  const error = errorState[props.name]
+  const { state, setState } = useContext(Context)
+  const error = state[`${props.name}Error`]
+
+  const handleChange = (ev: React.ChangeEvent<HTMLInputElement>): void => {
+    setState({
+      ...state,
+      [props.name]: ev.target.value
+    })
+  }
+
   const getStatus = (): string => {
     return '🔴'
   }
@@ -17,7 +25,7 @@ const TextField: React.FC<Props> = (props: Props) => {
 
   return (
     <TextFieldStyled>
-      <input {...props} />
+      <input data-testid={props.name} {...props} onChange={handleChange} />
       <span data-testid={`${props.name}-status`} title={getTitle()} className='status'>{getStatus()}</span>
     </TextFieldStyled>
   )
