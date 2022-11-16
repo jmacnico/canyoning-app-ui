@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ButtonStyled, TextFieldStyled, SpinerStyled } from '@/presentation/components'
+import { ButtonStyled, TextFieldStyled } from '@/presentation/components'
 
 
 export default styled.div`
@@ -42,21 +42,6 @@ export default styled.div`
       cursor: pointer;
       &:hover {
         text-decoration: underline;
-      }
-    }
-
-    .error-wrap {      
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      
-      ${SpinerStyled} {
-        margin-top: 30px;
-      }
-
-      .error {
-        margin-top: 30px;
-        color: ${({ theme }) => theme.colors.primaryLight};
       }
     }
 
