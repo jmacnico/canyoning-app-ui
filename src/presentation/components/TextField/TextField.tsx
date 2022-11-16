@@ -1,7 +1,9 @@
 import React from 'react'
 import TextFieldStyled from './TextField.styled'
 
-const TextField: React.FC<any> = (props) => {
+type Props = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+
+const TextField: React.FC<Props> = (props: Props) => {
   return (
     <TextFieldStyled>
       <input {...props} />

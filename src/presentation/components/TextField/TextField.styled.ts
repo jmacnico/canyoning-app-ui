@@ -5,13 +5,17 @@ export default styled.div`
   align-items: center;
   position: relative;
   
+  input {
+    flex-grow: 1;
+  }
+
   input[type="password"],
   input[type="email"] {
     border:1px solid ${({ theme }) => theme.colors.primaryLight};
     border-radius: 4px;
     line-height: 40px;
     padding: 0 40px 0 8px;
-    flex-grow: 1;
+   
 
     &:focus {
       outline-color: ${({ theme }) => theme.colors.primaryLight};
