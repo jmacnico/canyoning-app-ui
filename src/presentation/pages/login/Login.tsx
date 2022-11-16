@@ -1,12 +1,23 @@
-import React from 'react'
-
+import React, { useState } from 'react'
 import LoginContainerStyled from './Login.styled'
 import { TextField, Button, LoginHeader, Footer, FormStatus } from '../../components'
+import Context from '@/presentation/contexts/form/FormContext'
+
+type StateProps = {
+  isLoading: boolean
+  errorMessage: string
+}
 
 const Login: React.FC = () => {
+  const [state] = useState<StateProps>({
+    isLoading: false,
+    errorMessage: ''
+
+  })
   return (
-      <LoginContainerStyled>
-        <LoginHeader />
+    <LoginContainerStyled>
+      <LoginHeader />
+      <Context.Provider value={state}>
         <form className='form'>
           <h2>Login</h2>
           <TextField type="email" name="email" placeholder='Digite seu e-mail' />
@@ -15,8 +26,9 @@ const Login: React.FC = () => {
           <span className='link'>Criar conta</span>
           <FormStatus />
         </form>
-        <Footer />
-      </LoginContainerStyled>
+      </Context.Provider>
+      <Footer />
+    </LoginContainerStyled>
   )
 }
 export default Login
