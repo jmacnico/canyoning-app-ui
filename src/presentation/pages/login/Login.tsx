@@ -1,17 +1,14 @@
 import React from 'react'
 import { StylesContainer } from '@/presentation/styles'
 import LoginContainerStyled from './Login.styled'
-import { TextField, Button, Spiner, Logo } from '../../components'
+import { TextField, Button, Spiner, LoginHeader, Footer } from '../../components'
 
 const Login: React.FC = () => {
   return (
 
     <StylesContainer>
       <LoginContainerStyled>
-        <header className='header'>
-          <Logo/>
-          <h1>Canyoning</h1>
-        </header>
+        <LoginHeader/>
         <form className='form'>
           <h2>Login</h2>
           <TextField type="email" name="email" placeholder='Digite seu e-mail' />
@@ -23,7 +20,7 @@ const Login: React.FC = () => {
             <span className='error'>error</span>
           </div>
         </form>
-        <footer className='footer'></footer>
+        <Footer/>
       </LoginContainerStyled>
     </StylesContainer>
   )

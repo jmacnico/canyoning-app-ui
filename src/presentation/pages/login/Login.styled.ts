@@ -7,22 +7,7 @@ export default styled.div`
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
-  .header {
-    background-color: ${({ theme }) => theme.colors.primary};
-    display: flex;
-    flex-direction: column;
-    border-top: 40px solid ${({ theme }) => theme.colors.primaryDark};
-    align-items: center;
-
-    img {
-      margin-top: 40px;
-    }
-
-    h1 {
-      color: ${({ theme }) => theme.colors.white};
-      margin: 16px 0px 40px
-    }
-  }
+ 
 
   .form {
     display: flex;
@@ -77,8 +62,5 @@ export default styled.div`
 
   }
 
-  .footer {
-    background-color: ${({ theme }) => theme.colors.primary};
-    height: 48px;
-  }
+  
 `
