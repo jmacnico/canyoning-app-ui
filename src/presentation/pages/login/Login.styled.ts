@@ -28,6 +28,15 @@ export default styled.div`
 
     ${ButtonStyled} {
       margin-top: 32px;
+
+      &:disabled {
+        background-color: ${({theme})=> theme.colors.disabledBackgound};
+        color: ${({theme})=> theme.colors.color};
+
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
 
     ${TextFieldStyled} {      
@@ -40,6 +49,7 @@ export default styled.div`
       text-transform: lowercase;
       margin-top: 16px;
       cursor: pointer;
+      
       &:hover {
         text-decoration: underline;
       }

@@ -14,7 +14,9 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
         background: '#F2F2F2',
         primary: '#880E4F',
         primaryDark: '#560027',
-        primaryLight: '#BC477B'
+        primaryLight: '#BC477B',
+        disabledBackgound: '#ccc',
+        disabledColor: '#ccc'
 
       }
     }} />
