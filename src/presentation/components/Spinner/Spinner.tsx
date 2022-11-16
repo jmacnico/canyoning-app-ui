@@ -1,7 +1,7 @@
 import React from 'react'
-import SpinnerStyled from './Spiner.styled'
+import SpinnerStyled from './Spinner.styled'
 
-const Spiner: React.FC = () => {
+const Spinner: React.FC = () => {
   return (
     <SpinnerStyled>
       <div/>
@@ -12,4 +12,4 @@ const Spiner: React.FC = () => {
   )
 }
 
-export default Spiner
+export default Spinner

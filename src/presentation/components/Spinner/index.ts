@@ -1,2 +1,2 @@
-export { default as Spiner } from './Spiner'
-export { default as SpinerStyled } from './Spiner.styled'
+export { default as Spinner } from './Spinner'
+export { default as SpinnerStyled } from './Spinner.styled'

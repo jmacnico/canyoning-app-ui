@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { SpinerStyled } from '../'
+import { SpinnerStyled } from '../'
 
 export default styled.div`  
     display: flex;
     flex-direction: column;
     align-items: center;
     
-    ${SpinerStyled} {
+    ${SpinnerStyled} {
       margin-top: 30px;
     }
 

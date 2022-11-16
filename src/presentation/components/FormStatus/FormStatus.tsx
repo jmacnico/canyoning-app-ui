@@ -1,10 +1,10 @@
 import React from 'react'
 import { FormStatusStyled } from '.'
-import { Spiner } from '../'
+import { Spinner } from '../'
 const FormStatus: React.FC = () => {
   return (
     <FormStatusStyled>
-      <Spiner />
+      <Spinner />
       <span className='error'>error</span>
     </FormStatusStyled>
   )
