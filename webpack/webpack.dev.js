@@ -7,11 +7,7 @@ module.exports = {
     open: true,
     // hot: true,
     port: 3000, // ENV.PORT || '3000',
-    static: path.join(__dirname, '..', 'build')
-    //   {
-    //     directory: path.join(__dirname, '..', 'build/')
-    //   }
-    // ]
+    static: path.join(__dirname, '..', './build/')
     // watchFiles: ['src/**/*']
   }
 }
