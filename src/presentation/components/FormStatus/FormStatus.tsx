@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormStatusStyled } from '.'
+import FormStatusStyled from './FormStatus.styled'
 import { Spinner } from '../'
 const FormStatus: React.FC = () => {
   return (
