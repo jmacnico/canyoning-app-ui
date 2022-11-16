@@ -49,7 +49,12 @@ export default createGlobalStyle`
 
   * {
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin:0;
     box-sizing: border-box;
   }
+
+ 
 
 `

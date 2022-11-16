@@ -1,12 +1,10 @@
 import React from 'react'
-import { StylesContainer } from '@/presentation/styles'
+
 import LoginContainerStyled from './Login.styled'
 import { TextField, Button, LoginHeader, Footer, FormStatus } from '../../components'
 
 const Login: React.FC = () => {
   return (
-
-    <StylesContainer>
       <LoginContainerStyled>
         <LoginHeader />
         <form className='form'>
@@ -19,7 +17,6 @@ const Login: React.FC = () => {
         </form>
         <Footer />
       </LoginContainerStyled>
-    </StylesContainer>
   )
 }
 export default Login

@@ -5,6 +5,7 @@ export default styled.div`
   align-items: center;
   position: relative;
   
+  
   input {
     flex-grow: 1;
   }
